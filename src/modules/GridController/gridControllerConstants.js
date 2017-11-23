@@ -1,0 +1,7 @@
+const SHOW_TABLE = 'SHOW_TABLE';
+const GENERATE_TABLE = 'GENERATE_TABLE';
+
+export default {
+  SHOW_TABLE,
+  GENERATE_TABLE,
+};
