@@ -1,0 +1,9 @@
+.text-input {
+  border-radius: 5px;
+  width: 300px;
+  height: 100px;
+}
+
+.text-input:focus {
+  border-color: #66afe9;
+}

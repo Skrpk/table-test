@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-import * as main from './modules/Main/mainReducer';
+import main from './modules/Main/mainReducer';
+import gridController from './modules/GridController/gridControllerReducer';
 
 export default combineReducers({
   main,
+  gridController,
 });
