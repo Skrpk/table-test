@@ -1,0 +1,13 @@
+.wrapper {
+  margin: 0 auto;
+  padding-top: 20px;
+  width: 1000px;
+}
+
+.submit-button {
+  border-radius: 5px;
+  background-color: #5cb85c;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px 12px;
+}
