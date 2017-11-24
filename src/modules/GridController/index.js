@@ -7,10 +7,11 @@ import {
 
 const mapStateToProps = state => ({
   showGrid: state.gridController.get('showGrid'),
+  parsedData: state.gridController.get('parsedData'),
 });
 
 const mapDispatchToProps = dispatch => ({
-  generateTable: () => dispatch(generateTable()),
+  generateTable: inputData => dispatch(generateTable(inputData)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GridController);

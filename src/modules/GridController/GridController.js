@@ -28,13 +28,13 @@ export default class GridController extends React.Component {
         </div>
         <button
           className="submit-button"
-          onClick={this.props.generateTable}
+          onClick={() => this.props.generateTable(this.state.inputData)}
         >
           Generate Best grid ever!
         </button>
         {
           this.props.showGrid ?
-            <Grid /> : null
+            <Grid data={this.props.parsedData} /> : null
         }
       </div>
     );
@@ -44,4 +44,5 @@ export default class GridController extends React.Component {
 GridController.propTypes = {
   showGrid: PropTypes.bool.isRequired,
   generateTable: PropTypes.func.isRequired,
+  parsedData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
 };
