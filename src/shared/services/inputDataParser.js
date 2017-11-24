@@ -1,9 +1,9 @@
 const transformToArray = (data) => {
-  let isQuotesEnabled = false;
-  let currentCell = '';
-  const result = [];
-  result[0] = [];
+  let isQuotesEnabled = false; // need it to distinguish outer quotes from inner quotes
+  let currentCell = ''; // collecting data for every cell here
+  const result = [[]];
 
+  // i - for every symbol, j - for every 'row' array in result
   for (let i = 0, j = 0; i < data.length; i++) {
     if ((data[i] === '"' || data[i] === '\'') && !isQuotesEnabled) {
       isQuotesEnabled = true;
@@ -14,6 +14,7 @@ const transformToArray = (data) => {
     ) {
       isQuotesEnabled = false;
 
+      // end of input of textarea
       if (!data[i + 1]) {
         result[j].push(currentCell);
       }
@@ -21,6 +22,7 @@ const transformToArray = (data) => {
       continue;
     }
 
+    // if we`re not in quotes, push phrase to 'row' array
     if (data[i] === ',' && !isQuotesEnabled) {
       result[j].push(currentCell);
       currentCell = '';
@@ -29,6 +31,7 @@ const transformToArray = (data) => {
 
     currentCell += data[i];
 
+    // start parsing new row if current one is ended
     if ((data[i] === '\n' && !isQuotesEnabled) || !data[i + 1]) {
       result[j].push(currentCell);
       result.push([]);
@@ -40,10 +43,4 @@ const transformToArray = (data) => {
   return result;
 };
 
-const parseData = (data) => {
-  const rowsArray = transformToArray(data);
-
-  return rowsArray;
-};
-
-export default parseData;
+export default transformToArray;
