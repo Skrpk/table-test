@@ -9,10 +9,14 @@ import Grid from '../../shared/components/Grid';
 export default class GridController extends React.Component {
   state = {
     inputData: '',
+    isButtonActive: false,
   }
 
   _onChangeInput = (e) => {
-    this.setState({ inputData: e.target.value });
+    this.setState({
+      inputData: e.target.value,
+      isButtonActive: e.target.value.length !== 0,
+    });
     if (this.props.showGrid) {
       this.props.generateTable(e.target.value);
     }
@@ -36,8 +40,9 @@ export default class GridController extends React.Component {
         <button
           className="submit-button"
           onClick={() => this.props.generateTable(this.state.inputData)}
+          disabled={!this.state.isButtonActive}
         >
-          Generate Best grid ever!
+          Generate best table ever!
         </button>
         {
           this.props.showGrid ?
