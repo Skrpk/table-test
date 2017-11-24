@@ -1,7 +1,9 @@
 const SHOW_TABLE = 'SHOW_TABLE';
 const GENERATE_TABLE = 'GENERATE_TABLE';
+const HIDE_TABLE = 'HIDE_TABLE';
 
 export default {
   SHOW_TABLE,
   GENERATE_TABLE,
+  HIDE_TABLE,
 };

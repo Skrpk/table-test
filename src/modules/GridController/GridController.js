@@ -13,6 +13,13 @@ export default class GridController extends React.Component {
 
   _onChangeInput = (e) => {
     this.setState({ inputData: e.target.value });
+    if (this.props.showGrid) {
+      this.props.generateTable(e.target.value);
+    }
+
+    if (!e.target.value) {
+      this.props.hideTable();
+    }
   }
 
   render() {
@@ -44,5 +51,6 @@ export default class GridController extends React.Component {
 GridController.propTypes = {
   showGrid: PropTypes.bool.isRequired,
   generateTable: PropTypes.func.isRequired,
+  hideTable: PropTypes.func.isRequired,
   parsedData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
 };

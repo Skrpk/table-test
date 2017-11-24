@@ -12,6 +12,9 @@ const gridControllerReducer = (state = initialState, action) => {
       return state.set('showGrid', true)
                   .set('parsedData', action.parsedData);
     }
+    case constants.HIDE_TABLE: {
+      return state.set('showGrid', false);
+    }
     default:
       return state;
   }
