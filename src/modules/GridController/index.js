@@ -13,7 +13,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   generateTable: inputData => dispatch(generateTable(inputData)),
-  hideTable: inputData => dispatch(hideTable()),
+  hideTable: () => dispatch(hideTable()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GridController);

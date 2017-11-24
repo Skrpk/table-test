@@ -1,12 +1,8 @@
 import React from 'react';
 import GridController from '../GridController';
 
-class Main extends React.Component {
-  render() {
-    return (
-      <GridController />
-    );
-  }
-}
+const Main = () => (
+  <GridController />
+);
 
 export default Main;

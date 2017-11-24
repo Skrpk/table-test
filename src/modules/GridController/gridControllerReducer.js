@@ -10,7 +10,7 @@ const gridControllerReducer = (state = initialState, action) => {
   switch (action.type) {
     case constants.GENERATE_TABLE: {
       return state.set('showGrid', true)
-                  .set('parsedData', action.parsedData);
+                  .set('parsedData', action.parsedData); // eslint-disable-line
     }
     case constants.HIDE_TABLE: {
       return state.set('showGrid', false);

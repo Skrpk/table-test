@@ -7,9 +7,9 @@ const TextArea = props =>
     <textarea
       onChange={props.onChangeInput}
       className="text-input"
-    >
-      {props.inputData}
-    </textarea>
+      name="description"
+      value={props.inputData}
+    />
   );
 
 TextArea.propTypes = {
