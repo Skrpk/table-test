@@ -1,10 +1,13 @@
 import { takeEvery, put } from 'redux-saga/effects';
 
+import parseData from '../../shared/services/inputDataParser';
 import constants from './gridControllerConstants';
 
-function* generateTable() {
+function* generateTable({ inputData }) {
+  const parsedData = parseData(inputData);
   yield put({
     type: constants.GENERATE_TABLE,
+    parsedData,
   });
 }
 
