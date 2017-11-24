@@ -25,7 +25,7 @@ class Grid extends React.Component {
     }
 
     return (
-      <tr>{result}</tr>
+      <tr key={Math.random()}>{result}</tr>
     );
   }
 

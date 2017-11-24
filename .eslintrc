@@ -5,6 +5,8 @@
     "linebreak-style": 0,
     "no-underscore-dangle": 0,
     "import/prefer-default-export": 0,
+    "no-plusplus": 0,
+    "no-continue": 0
   },
   "parser": "babel-eslint"
 }

@@ -2,15 +2,16 @@
   border: 1px solid #ddd;
   width: 100%;
   max-width: 100%;
-  margin-bottom: 20px;
   border-collapse: collapse;
 }
 
 .table th, table td {
   border: 1px solid #ddd;
   padding: 10px;
+  white-space: pre;
 }
 
 .table th {
   text-align: left;
+  background-color: #eaecf0;
 }
